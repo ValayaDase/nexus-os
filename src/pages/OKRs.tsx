@@ -126,7 +126,7 @@ export const OKRs: React.FC = () => {
                               min={0}
                               max={kr.target}
                               value={kr.current}
-                              onChange={(e) => updateOKRProgress(okr.id, kr.id, Number(e.target.value))}
+                              onChange={(e) => updateOKRProgress(okr.id, Number(e.target.value))}
                               className="w-32 accent-blue-500 cursor-pointer"
                             />
                           </div>
