@@ -30,25 +30,25 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonRef = (ref as React.RefObject<HTMLButtonElement>) || internalRef;
 
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] select-none cursor-pointer rounded-xl';
+      'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] select-none cursor-pointer rounded-xl';
 
     const variants = {
       primary:
-        'bg-violet-600 hover:bg-violet-700 text-white shadow-md hover:shadow-lg shadow-violet-500/20 border border-violet-500/30',
+        'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/30 border border-white/20',
       secondary:
-        'bg-zinc-100 hover:bg-zinc-200 text-zinc-900 border border-zinc-200/80',
+        'bg-white/12 hover:bg-white/20 text-white border border-white/15 backdrop-blur-md shadow-xs',
       outline:
-        'bg-transparent hover:bg-zinc-100/80 text-zinc-800 border border-zinc-300 hover:border-zinc-400',
+        'bg-slate-900/40 hover:bg-white/15 text-slate-200 border border-white/15 backdrop-blur-md',
       ghost:
-        'bg-transparent hover:bg-zinc-100 text-zinc-700 hover:text-zinc-900',
+        'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white',
       danger:
-        'bg-red-600 hover:bg-red-700 text-white shadow-sm shadow-red-500/20',
+        'bg-rose-600 hover:bg-rose-500 text-white shadow-md shadow-rose-500/30 border border-white/20',
       success:
-        'bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm shadow-emerald-500/20',
+        'bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-500/30 border border-white/20',
     };
 
     const sizes = {
-      sm: 'text-xs px-3 py-1.5 gap-1.5 rounded-lg',
+      sm: 'text-xs px-3.5 py-1.5 gap-1.5 rounded-lg',
       md: 'text-sm px-4 py-2 gap-2 rounded-xl',
       lg: 'text-base px-6 py-3 gap-2.5 rounded-2xl font-semibold',
     };

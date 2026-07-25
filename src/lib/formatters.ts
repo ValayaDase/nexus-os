@@ -69,31 +69,31 @@ export function getInitials(name: string): string {
 
 export function getStatusColor(status: string): string {
   const colors: Record<string, string> = {
-    on_track: 'text-emerald-600 bg-emerald-50 border-emerald-200',
-    at_risk: 'text-amber-600 bg-amber-50 border-amber-200',
-    behind: 'text-red-600 bg-red-50 border-red-200',
-    completed: 'text-violet-600 bg-violet-50 border-violet-200',
-    active: 'text-emerald-600 bg-emerald-50 border-emerald-200',
-    away: 'text-amber-600 bg-amber-50 border-amber-200',
-    busy: 'text-red-600 bg-red-50 border-red-200',
-    done: 'text-emerald-600 bg-emerald-50 border-emerald-200',
-    in_progress: 'text-blue-600 bg-blue-50 border-blue-200',
-    planned: 'text-violet-600 bg-violet-50 border-violet-200',
-    backlog: 'text-zinc-600 bg-zinc-50 border-zinc-200',
-    todo: 'text-zinc-600 bg-zinc-50 border-zinc-200',
-    review: 'text-amber-600 bg-amber-50 border-amber-200',
+    on_track: 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30 backdrop-blur-md',
+    at_risk: 'text-amber-300 bg-amber-500/20 border-amber-500/30 backdrop-blur-md',
+    behind: 'text-rose-400 bg-rose-500/20 border-rose-500/30 backdrop-blur-md',
+    completed: 'text-purple-300 bg-purple-500/20 border-purple-500/30 backdrop-blur-md',
+    active: 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30 backdrop-blur-md',
+    away: 'text-amber-300 bg-amber-500/20 border-amber-500/30 backdrop-blur-md',
+    busy: 'text-rose-400 bg-rose-500/20 border-rose-500/30 backdrop-blur-md',
+    done: 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30 backdrop-blur-md',
+    in_progress: 'text-blue-400 bg-blue-500/20 border-blue-500/30 backdrop-blur-md',
+    planned: 'text-purple-300 bg-purple-500/20 border-purple-500/30 backdrop-blur-md',
+    backlog: 'text-slate-300 bg-white/10 border-white/15 backdrop-blur-md',
+    todo: 'text-slate-300 bg-white/10 border-white/15 backdrop-blur-md',
+    review: 'text-amber-300 bg-amber-500/20 border-amber-500/30 backdrop-blur-md',
   };
-  return colors[status] || 'text-zinc-600 bg-zinc-50 border-zinc-200';
+  return colors[status] || 'text-slate-300 bg-white/10 border-white/15 backdrop-blur-md';
 }
 
 export function getPriorityColor(priority: string): string {
   const colors: Record<string, string> = {
-    critical: 'text-red-700 bg-red-50 border-red-200',
-    high: 'text-orange-700 bg-orange-50 border-orange-200',
-    medium: 'text-amber-700 bg-amber-50 border-amber-200',
-    low: 'text-zinc-600 bg-zinc-50 border-zinc-200',
+    critical: 'text-rose-400 bg-rose-500/20 border-rose-500/30 backdrop-blur-md',
+    high: 'text-amber-400 bg-amber-500/20 border-amber-500/30 backdrop-blur-md',
+    medium: 'text-blue-400 bg-blue-500/20 border-blue-500/30 backdrop-blur-md',
+    low: 'text-slate-300 bg-white/10 border-white/15 backdrop-blur-md',
   };
-  return colors[priority] || 'text-zinc-600 bg-zinc-50 border-zinc-200';
+  return colors[priority] || 'text-slate-300 bg-white/10 border-white/15 backdrop-blur-md';
 }
 
 export function truncate(str: string, length: number): string {
