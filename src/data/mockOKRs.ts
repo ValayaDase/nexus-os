@@ -1,0 +1,75 @@
+import type { OKR } from '../types';
+
+export const mockOKRs: OKR[] = [
+  {
+    id: '1',
+    objective: 'Achieve Product-Market Fit',
+    description: 'Validate core value proposition with paying customers and reach key retention milestones.',
+    progress: 75,
+    status: 'on_track',
+    quarter: 'Q3 2026',
+    owner: 'Arjun Mehta',
+    keyResults: [
+      { id: 'kr1-1', title: 'Reach 500 active users', progress: 82, target: 500, current: 410, unit: 'users' },
+      { id: 'kr1-2', title: 'Achieve 40% Week-1 retention', progress: 68, target: 40, current: 27, unit: '%' },
+      { id: 'kr1-3', title: 'Get NPS score above 60', progress: 90, target: 60, current: 72, unit: 'NPS' },
+    ],
+  },
+  {
+    id: '2',
+    objective: 'Scale Engineering Output',
+    description: 'Build a world-class engineering culture and ship features 2x faster than last quarter.',
+    progress: 62,
+    status: 'on_track',
+    quarter: 'Q3 2026',
+    owner: 'Priya Sharma',
+    keyResults: [
+      { id: 'kr2-1', title: 'Ship 12 features this quarter', progress: 58, target: 12, current: 7, unit: 'features' },
+      { id: 'kr2-2', title: 'Reduce bug count below 20', progress: 70, target: 20, current: 26, unit: 'bugs' },
+      { id: 'kr2-3', title: 'Achieve 95% uptime SLA', progress: 98, target: 95, current: 99.2, unit: '%' },
+      { id: 'kr2-4', title: 'Complete CI/CD pipeline migration', progress: 45, target: 100, current: 45, unit: '%' },
+    ],
+  },
+  {
+    id: '3',
+    objective: 'Close Seed Round at $3M',
+    description: 'Secure seed funding to extend runway and accelerate growth through strategic investors.',
+    progress: 80,
+    status: 'on_track',
+    quarter: 'Q3 2026',
+    owner: 'Arjun Mehta',
+    keyResults: [
+      { id: 'kr3-1', title: 'Pitch to 25 investors', progress: 88, target: 25, current: 22, unit: 'investors' },
+      { id: 'kr3-2', title: 'Get 5 term sheets', progress: 60, target: 5, current: 3, unit: 'term sheets' },
+      { id: 'kr3-3', title: 'Close $2.4M committed', progress: 80, target: 3000000, current: 2400000, unit: '$' },
+    ],
+  },
+  {
+    id: '4',
+    objective: 'Build Brand Awareness',
+    description: 'Establish NexusAI as the go-to solution for AI developer tools in the market.',
+    progress: 45,
+    status: 'at_risk',
+    quarter: 'Q3 2026',
+    owner: 'Rahul Verma',
+    keyResults: [
+      { id: 'kr4-1', title: 'Reach 10K Twitter followers', progress: 35, target: 10000, current: 3500, unit: 'followers' },
+      { id: 'kr4-2', title: 'Publish 8 blog posts', progress: 50, target: 8, current: 4, unit: 'posts' },
+      { id: 'kr4-3', title: 'Speak at 3 conferences', progress: 33, target: 3, current: 1, unit: 'conferences' },
+    ],
+  },
+  {
+    id: '5',
+    objective: 'Hire Key Talent',
+    description: 'Recruit exceptional engineers and designers to strengthen the core team.',
+    progress: 55,
+    status: 'on_track',
+    quarter: 'Q3 2026',
+    owner: 'Rahul Verma',
+    keyResults: [
+      { id: 'kr5-1', title: 'Hire 3 senior engineers', progress: 66, target: 3, current: 2, unit: 'engineers' },
+      { id: 'kr5-2', title: 'Hire 1 product designer', progress: 0, target: 1, current: 0, unit: 'designers' },
+      { id: 'kr5-3', title: 'Reduce time-to-hire below 30 days', progress: 60, target: 30, current: 36, unit: 'days' },
+    ],
+  },
+];
