@@ -22,12 +22,12 @@ export const Sidebar: React.FC = () => {
   return (
     <aside
       className={cn(
-        'fixed top-0 left-0 bottom-0 z-30 bg-white border-r border-zinc-200/80 flex flex-col transition-all duration-300 ease-out select-none shadow-xs',
+        'fixed top-0 left-0 bottom-0 z-30 bg-white/75 backdrop-blur-xl border-r border-white/60 flex flex-col transition-all duration-300 ease-out select-none shadow-xl shadow-violet-950/5',
         sidebarCollapsed ? 'w-[72px]' : 'w-[260px]'
       )}
     >
       {/* Brand Header */}
-      <div className="h-16 flex items-center justify-between px-4 border-b border-zinc-100">
+      <div className="h-16 flex items-center justify-between px-4 border-b border-zinc-200/50 bg-white/40">
         <NavLink to="/dashboard" className="flex items-center gap-3 overflow-hidden">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 to-indigo-600 flex items-center justify-center text-white font-display font-bold text-xl shadow-md shadow-violet-500/20 shrink-0">
             N

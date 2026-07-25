@@ -17,8 +17,9 @@ function Hero3DSphere() {
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2;
-      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
+      const t = state.clock.getElapsedTime();
+      meshRef.current.rotation.x = t * 0.2;
+      meshRef.current.rotation.y = t * 0.3;
     }
   });
 
@@ -28,7 +29,6 @@ function Hero3DSphere() {
         <sphereGeometry args={[1, 64, 64]} />
         <MeshDistortMaterial
           color="#7C3AED"
-          attach="material"
           distort={0.4}
           speed={2}
           roughness={0.2}
@@ -51,7 +51,9 @@ export const Landing: React.FC = () => {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 to-indigo-600 flex items-center justify-center text-white font-display font-bold text-xl shadow-md shadow-violet-500/20">
               N
             </div>
-            <span className="font-display font-bold text-lg text-zinc-900 tracking-tight">NexusOS</span>
+            <span className="font-display font-bold text-lg text-zinc-900 tracking-tight">
+              NexusOS
+            </span>
           </NavLink>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
@@ -68,7 +70,13 @@ export const Landing: React.FC = () => {
               </Button>
             </NavLink>
             <NavLink to="/dashboard">
-              <Button variant="primary" size="sm" magnetic icon={<ArrowRight className="w-4 h-4" />} iconPosition="right">
+              <Button
+                variant="primary"
+                size="sm"
+                magnetic
+                icon={<ArrowRight className="w-4 h-4" />}
+                iconPosition="right"
+              >
                 Enter Workspace
               </Button>
             </NavLink>
@@ -109,12 +117,22 @@ export const Landing: React.FC = () => {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 animate-fade-in-up stagger-3">
               <NavLink to="/dashboard">
-                <Button size="lg" variant="primary" magnetic icon={<ArrowRight className="w-5 h-5" />} iconPosition="right">
+                <Button
+                  size="lg"
+                  variant="primary"
+                  magnetic
+                  icon={<ArrowRight className="w-5 h-5" />}
+                  iconPosition="right"
+                >
                   Launch Demo Workspace
                 </Button>
               </NavLink>
               <a href="#preview">
-                <Button size="lg" variant="outline" icon={<Play className="w-4 h-4 fill-zinc-800" />}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  icon={<Play className="w-4 h-4 fill-zinc-800" />}
+                >
                   Watch 2-Min Demo
                 </Button>
               </a>
@@ -160,22 +178,30 @@ export const Landing: React.FC = () => {
                   <SpotlightCard className="bg-white p-6">
                     <div className="text-xs text-zinc-500 font-medium">Monthly Recurring Revenue</div>
                     <div className="font-display font-bold text-2xl text-zinc-900 mt-1">$12,500</div>
-                    <span className="text-xs text-emerald-600 font-semibold mt-2 inline-block">↑ +14.2% MoM</span>
+                    <span className="text-xs text-emerald-600 font-semibold mt-2 inline-block">
+                      ↑ +14.2% MoM
+                    </span>
                   </SpotlightCard>
                   <SpotlightCard className="bg-white p-6">
                     <div className="text-xs text-zinc-500 font-medium">Runway Months</div>
                     <div className="font-display font-bold text-2xl text-zinc-900 mt-1">18.4 Mos</div>
-                    <span className="text-xs text-violet-600 font-semibold mt-2 inline-block">Burn: $45K/mo</span>
+                    <span className="text-xs text-violet-600 font-semibold mt-2 inline-block">
+                      Burn: $45K/mo
+                    </span>
                   </SpotlightCard>
                   <SpotlightCard className="bg-white p-6">
                     <div className="text-xs text-zinc-500 font-medium">Active Investors</div>
                     <div className="font-display font-bold text-2xl text-zinc-900 mt-1">8 Funds</div>
-                    <span className="text-xs text-emerald-600 font-semibold mt-2 inline-block">2 Term Sheets</span>
+                    <span className="text-xs text-emerald-600 font-semibold mt-2 inline-block">
+                      2 Term Sheets
+                    </span>
                   </SpotlightCard>
                   <SpotlightCard className="bg-white p-6">
                     <div className="text-xs text-zinc-500 font-medium">OKR Progress (Q3)</div>
                     <div className="font-display font-bold text-2xl text-zinc-900 mt-1">74%</div>
-                    <span className="text-xs text-emerald-600 font-semibold mt-2 inline-block">4/5 On Track</span>
+                    <span className="text-xs text-emerald-600 font-semibold mt-2 inline-block">
+                      4/5 On Track
+                    </span>
                   </SpotlightCard>
                 </div>
               </div>
@@ -188,9 +214,15 @@ export const Landing: React.FC = () => {
       <section id="features" className="py-24 bg-zinc-50/50 border-t border-zinc-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-semibold text-violet-700 uppercase tracking-widest">Built for Execution</span>
-            <h2 className="text-h1 text-zinc-900 font-display font-bold mt-2">Every tool a founder needs. Zero bloat.</h2>
-            <p className="text-sm text-zinc-600 mt-3">Designed with Apple restraint and Linear speed to help you make decisions faster.</p>
+            <span className="text-xs font-semibold text-violet-700 uppercase tracking-widest">
+              Built for Execution
+            </span>
+            <h2 className="text-h1 text-zinc-900 font-display font-bold mt-2">
+              Every tool a founder needs. Zero bloat.
+            </h2>
+            <p className="text-sm text-zinc-600 mt-3">
+              Designed with Apple restraint and Linear speed to help you make decisions faster.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -199,7 +231,9 @@ export const Landing: React.FC = () => {
                 <Target className="w-6 h-6" />
               </div>
               <h3 className="font-display font-bold text-lg text-zinc-900 mb-2">Vision & OKRs</h3>
-              <p className="text-sm text-zinc-600 leading-relaxed">Align your team around clear quarterly objectives and measurable key results with real-time progress calculations.</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                Align your team around clear quarterly objectives and measurable key results with real-time progress calculations.
+              </p>
             </SpotlightCard>
 
             <SpotlightCard className="bg-white p-8">
@@ -207,7 +241,9 @@ export const Landing: React.FC = () => {
                 <Map className="w-6 h-6" />
               </div>
               <h3 className="font-display font-bold text-lg text-zinc-900 mb-2">Product Roadmap</h3>
-              <p className="text-sm text-zinc-600 leading-relaxed">Kanban-style pipeline to manage feature releases, sprint velocity, and engineering priorities seamlessly.</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                Kanban-style pipeline to manage feature releases, sprint velocity, and engineering priorities seamlessly.
+              </p>
             </SpotlightCard>
 
             <SpotlightCard className="bg-white p-8">
@@ -215,7 +251,9 @@ export const Landing: React.FC = () => {
                 <Briefcase className="w-6 h-6" />
               </div>
               <h3 className="font-display font-bold text-lg text-zinc-900 mb-2">Investor CRM</h3>
-              <p className="text-sm text-zinc-600 leading-relaxed">Track fundraising stages from pitch to term sheets, manage check sizes, and send monthly updates easily.</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                Track fundraising stages from pitch to term sheets, manage check sizes, and send monthly updates easily.
+              </p>
             </SpotlightCard>
 
             <SpotlightCard className="bg-white p-8">
@@ -223,7 +261,9 @@ export const Landing: React.FC = () => {
                 <Users className="w-6 h-6" />
               </div>
               <h3 className="font-display font-bold text-lg text-zinc-900 mb-2">Hiring ATS Pipeline</h3>
-              <p className="text-sm text-zinc-600 leading-relaxed">Streamline candidate screening, interviews, offers, and org charts to build your dream team faster.</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                Streamline candidate screening, interviews, offers, and org charts to build your dream team faster.
+              </p>
             </SpotlightCard>
 
             <SpotlightCard className="bg-white p-8">
@@ -231,7 +271,9 @@ export const Landing: React.FC = () => {
                 <TrendingUp className="w-6 h-6" />
               </div>
               <h3 className="font-display font-bold text-lg text-zinc-900 mb-2">Financial Analytics</h3>
-              <p className="text-sm text-zinc-600 leading-relaxed">Interactive charts for MRR, burn rate, runway projections, and unit economics with custom glass tooltips.</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                Interactive charts for MRR, burn rate, runway projections, and unit economics with custom glass tooltips.
+              </p>
             </SpotlightCard>
 
             <SpotlightCard className="bg-white p-8">
@@ -239,7 +281,9 @@ export const Landing: React.FC = () => {
                 <Sparkles className="w-6 h-6" />
               </div>
               <h3 className="font-display font-bold text-lg text-zinc-900 mb-2">AI Insights Engine</h3>
-              <p className="text-sm text-zinc-600 leading-relaxed">Automated predictions for churn risk, revenue growth, and hiring bottlenecks with confidence metrics.</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                Automated predictions for churn risk, revenue growth, and hiring bottlenecks with confidence metrics.
+              </p>
             </SpotlightCard>
           </div>
         </div>
@@ -249,22 +293,30 @@ export const Landing: React.FC = () => {
       <section id="pricing" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="text-xs font-semibold text-violet-700 uppercase tracking-widest">Transparent Pricing</span>
+            <span className="text-xs font-semibold text-violet-700 uppercase tracking-widest">
+              Transparent Pricing
+            </span>
             <h2 className="text-h1 text-zinc-900 font-display font-bold mt-2">Scale as you grow</h2>
             <div className="mt-6 inline-flex items-center p-1 rounded-xl bg-zinc-100 border border-zinc-200">
               <button
                 onClick={() => setBillingCycle('monthly')}
                 className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  billingCycle === 'monthly' ? 'bg-white text-zinc-900 shadow-xs' : 'text-zinc-500'
+                  billingCycle === 'monthly'
+                    ? 'bg-white text-zinc-900 shadow-xs'
+                    : 'text-zinc-500'
                 }`}
+                type="button"
               >
                 Monthly Billing
               </button>
               <button
                 onClick={() => setBillingCycle('annual')}
                 className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  billingCycle === 'annual' ? 'bg-white text-zinc-900 shadow-xs' : 'text-zinc-500'
+                  billingCycle === 'annual'
+                    ? 'bg-white text-zinc-900 shadow-xs'
+                    : 'text-zinc-500'
                 }`}
+                type="button"
               >
                 Annual (Save 20%)
               </button>
@@ -280,17 +332,29 @@ export const Landing: React.FC = () => {
                   {billingCycle === 'annual' ? '$49' : '$59'}
                   <span className="text-xs text-zinc-400 font-normal">/mo</span>
                 </div>
-                <p className="text-xs text-zinc-500 mt-2">Perfect for early stage teams raising Pre-Seed & Seed rounds.</p>
+                <p className="text-xs text-zinc-500 mt-2">
+                  Perfect for early stage teams raising Pre-Seed & Seed rounds.
+                </p>
                 <div className="my-6 border-t border-zinc-100" />
                 <ul className="space-y-3 text-xs text-zinc-600">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Up to 10 Team Members</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> OKR & Roadmap Workspace</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Investor CRM (Up to 25 funds)</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Basic Financial Analytics</li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Up to 10 Team Members
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> OKR & Roadmap Workspace
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Investor CRM (Up to 25 funds)
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Basic Financial Analytics
+                  </li>
                 </ul>
               </div>
               <NavLink to="/dashboard" className="mt-8">
-                <Button variant="outline" className="w-full">Start Free Trial</Button>
+                <Button variant="outline" className="w-full">
+                  Start Free Trial
+                </Button>
               </NavLink>
             </SpotlightCard>
 
@@ -305,18 +369,32 @@ export const Landing: React.FC = () => {
                   {billingCycle === 'annual' ? '$119' : '$149'}
                   <span className="text-xs text-zinc-400 font-normal">/mo</span>
                 </div>
-                <p className="text-xs text-zinc-500 mt-2">For scaling startups executing Series A milestones.</p>
+                <p className="text-xs text-zinc-500 mt-2">
+                  For scaling startups executing Series A milestones.
+                </p>
                 <div className="my-6 border-t border-zinc-100" />
                 <ul className="space-y-3 text-xs text-zinc-600">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Up to 50 Team Members</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Everything in Seed</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Unlimited Investor CRM</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> ATS Hiring Pipeline</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> AI Insights Engine</li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Up to 50 Team Members
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Everything in Seed
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Unlimited Investor CRM
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> ATS Hiring Pipeline
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> AI Insights Engine
+                  </li>
                 </ul>
               </div>
               <NavLink to="/dashboard" className="mt-8">
-                <Button variant="primary" className="w-full" magnetic>Get Started</Button>
+                <Button variant="primary" className="w-full" magnetic>
+                  Get Started
+                </Button>
               </NavLink>
             </SpotlightCard>
 
@@ -328,17 +406,29 @@ export const Landing: React.FC = () => {
                   {billingCycle === 'annual' ? '$249' : '$299'}
                   <span className="text-xs text-zinc-400 font-normal">/mo</span>
                 </div>
-                <p className="text-xs text-zinc-500 mt-2">For high-growth venture-backed platforms.</p>
+                <p className="text-xs text-zinc-500 mt-2">
+                  For high-growth venture-backed platforms.
+                </p>
                 <div className="my-6 border-t border-zinc-100" />
                 <ul className="space-y-3 text-xs text-zinc-600">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Unlimited Team Members</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Custom Board Reporting</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Dedicated Account Manager</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-500" /> Custom API Access</li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Unlimited Team Members
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Custom Board Reporting
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Dedicated Account Manager
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" /> Custom API Access
+                  </li>
                 </ul>
               </div>
               <NavLink to="/dashboard" className="mt-8">
-                <Button variant="outline" className="w-full">Contact Sales</Button>
+                <Button variant="outline" className="w-full">
+                  Contact Sales
+                </Button>
               </NavLink>
             </SpotlightCard>
           </div>
@@ -351,15 +441,25 @@ export const Landing: React.FC = () => {
           <div className="w-12 h-12 rounded-2xl bg-violet-600 flex items-center justify-center text-white font-display font-bold text-2xl mx-auto mb-6 shadow-lg shadow-violet-500/30">
             N
           </div>
-          <h2 className="text-h1 font-display font-bold mb-4">Ready to operate like a top 1% founder?</h2>
-          <p className="text-zinc-400 text-sm max-w-md mx-auto mb-8">Join thousands of high-growth founders scaling their startups with NexusOS.</p>
+          <h2 className="text-h1 font-display font-bold mb-4">
+            Ready to operate like a top 1% founder?
+          </h2>
+          <p className="text-zinc-400 text-sm max-w-md mx-auto mb-8">
+            Join thousands of high-growth founders scaling their startups with NexusOS.
+          </p>
           <NavLink to="/dashboard">
-            <Button size="lg" variant="primary" magnetic icon={<ArrowRight className="w-5 h-5" />} iconPosition="right">
+            <Button
+              size="lg"
+              variant="primary"
+              magnetic
+              icon={<ArrowRight className="w-5 h-5" />}
+              iconPosition="right"
+            >
               Enter Founder Workspace
             </Button>
           </NavLink>
           <div className="mt-12 text-xs text-zinc-500">
-            © 2026 NexusOS Inc. Designed for Frontend Wars 2026. Built with React, TypeScript & Vite.
+            © 2026 NexusOS Inc. Designed for Frontend Wars 2026. Built with React, TypeScript &amp; Vite.
           </div>
         </div>
       </footer>

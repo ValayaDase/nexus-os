@@ -19,7 +19,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         <div className="flex items-center gap-2 mb-1">
           <h1 className="text-h2 text-zinc-900 font-display font-bold tracking-tight">{title}</h1>
           {badge && (
-            <span className="px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-700 text-xs font-semibold border border-violet-200">
+            <span className="px-2.5 py-0.5 rounded-full bg-violet-500/10 text-violet-700 text-xs font-semibold border border-violet-500/20 backdrop-blur-md">
               {badge}
             </span>
           )}

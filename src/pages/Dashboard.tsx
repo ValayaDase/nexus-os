@@ -50,7 +50,7 @@ export const Dashboard: React.FC = () => {
       {/* Top Row: 4 KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* KPI 1: Runway */}
-        <SpotlightCard className="bg-white">
+        <SpotlightCard>
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Runway</span>
             <span className="p-2 rounded-xl bg-violet-50 text-violet-600">
@@ -69,7 +69,7 @@ export const Dashboard: React.FC = () => {
         </SpotlightCard>
 
         {/* KPI 2: MRR */}
-        <SpotlightCard className="bg-white">
+        <SpotlightCard>
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">MRR</span>
             <span className="p-2 rounded-xl bg-emerald-50 text-emerald-600">
@@ -89,7 +89,7 @@ export const Dashboard: React.FC = () => {
         </SpotlightCard>
 
         {/* KPI 3: Team Size */}
-        <SpotlightCard className="bg-white">
+        <SpotlightCard>
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Team Size</span>
             <span className="p-2 rounded-xl bg-blue-50 text-blue-600">
@@ -108,7 +108,7 @@ export const Dashboard: React.FC = () => {
         </SpotlightCard>
 
         {/* KPI 4: Active Investors */}
-        <SpotlightCard className="bg-white">
+        <SpotlightCard>
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Active Investors</span>
             <span className="p-2 rounded-xl bg-amber-50 text-amber-600">
@@ -131,7 +131,7 @@ export const Dashboard: React.FC = () => {
       {/* Middle Row: Financial Chart (3 cols) + OKR Progress (1 col) */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Financial Revenue Growth Chart */}
-        <SpotlightCard className="lg:col-span-3 bg-white p-6">
+        <SpotlightCard className="lg:col-span-3 p-6">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h3 className="font-display font-bold text-lg text-zinc-900">Revenue & Cash Velocity</h3>
@@ -183,7 +183,7 @@ export const Dashboard: React.FC = () => {
         </SpotlightCard>
 
         {/* OKR Progress Card */}
-        <SpotlightCard className="bg-white p-6 flex flex-col justify-between">
+        <SpotlightCard className="p-6 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-display font-bold text-base text-zinc-900">Q3 OKR Pulse</h3>
@@ -208,7 +208,7 @@ export const Dashboard: React.FC = () => {
       {/* Bottom Row: AI Insights + Recent Activity + Tasks */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* AI Insight Highlight */}
-        <SpotlightCard className="bg-gradient-to-br from-violet-950 via-zinc-900 to-indigo-950 text-white p-6">
+        <SpotlightCard className="bg-gradient-to-br from-violet-950/90 via-slate-900/90 to-indigo-950/90 text-white p-6 backdrop-blur-xl border-violet-500/30">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-violet-400" />
@@ -235,7 +235,7 @@ export const Dashboard: React.FC = () => {
         </SpotlightCard>
 
         {/* Priority Tasks */}
-        <SpotlightCard className="bg-white p-6">
+        <SpotlightCard className="p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-display font-bold text-base text-zinc-900">Sprint Priorities</h3>
             <NavLink to="/tasks" className="text-xs text-violet-600 hover:text-violet-700 font-semibold">
@@ -245,7 +245,7 @@ export const Dashboard: React.FC = () => {
 
           <div className="space-y-3">
             {tasks.slice(0, 4).map((task) => (
-              <div key={task.id} className="p-3 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-between">
+              <div key={task.id} className="p-3 rounded-xl bg-white/50 backdrop-blur-md border border-white/60 flex items-center justify-between shadow-2xs">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-violet-600" />
                   <div>
@@ -260,7 +260,7 @@ export const Dashboard: React.FC = () => {
         </SpotlightCard>
 
         {/* Recent Activity */}
-        <SpotlightCard className="bg-white p-6">
+        <SpotlightCard className="p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-display font-bold text-base text-zinc-900">Recent Pulse</h3>
             <span className="text-xs text-zinc-400">Live Feed</span>

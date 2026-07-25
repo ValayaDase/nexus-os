@@ -18,7 +18,7 @@ export const TopBar: React.FC = () => {
   const displayTitle = pathName.charAt(0).toUpperCase() + pathName.slice(1).replace('-', ' ');
 
   return (
-    <header className="h-16 bg-white/80 backdrop-blur-md border-b border-zinc-200/80 sticky top-0 z-20 px-6 flex items-center justify-between">
+    <header className="h-16 bg-white/65 backdrop-blur-xl border-b border-white/60 sticky top-0 z-20 px-6 flex items-center justify-between shadow-xs">
       {/* Left: Breadcrumbs / Title */}
       <div className="flex items-center gap-3">
         <NavLink to="/dashboard" className="text-xs font-medium text-zinc-400 hover:text-zinc-600 transition-colors">

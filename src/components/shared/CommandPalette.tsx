@@ -37,12 +37,12 @@ export const CommandPalette: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-zinc-950/40 backdrop-blur-md flex items-start justify-center pt-24 px-4 animate-fade-in">
+    <div className="fixed inset-0 z-50 bg-slate-950/35 backdrop-blur-xl flex items-start justify-center pt-24 px-4 animate-fade-in">
       <div
         className="fixed inset-0"
         onClick={() => setCommandPaletteOpen(false)}
       />
-      <div className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl border border-zinc-200 overflow-hidden animate-scale-in z-10">
+      <div className="relative w-full max-w-xl bg-white/85 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-violet-950/15 border border-white/90 overflow-hidden animate-scale-in z-10">
         <div className="flex items-center px-4 border-b border-zinc-100">
           <Search className="w-5 h-5 text-zinc-400 shrink-0" />
           <input
