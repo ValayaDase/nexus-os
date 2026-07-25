@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  ArrowRight, Sparkles, Target, Map, Briefcase,
-  Users, TrendingUp, Check, Play, Layers, Compass,
-  BarChart3, Rocket, Shield, HelpCircle, Star, Zap, Globe, Menu, X
+  ArrowRight, Sparkles, Target, Briefcase,
+  Users, TrendingUp, Check, Play, Layers,
+  BarChart3, Rocket, Zap, Menu, X
 } from 'lucide-react';
-import { SpotlightCard } from '../components/ui/SpotlightCard';
 
 export const Landing: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

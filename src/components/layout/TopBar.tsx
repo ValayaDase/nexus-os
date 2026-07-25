@@ -13,10 +13,6 @@ export const TopBar: React.FC = () => {
 
   const unreadCount = notifications.filter((n) => !n.read).length;
 
-  // Breadcrumbs title
-  const pathName = location.pathname.replace('/', '') || 'dashboard';
-  const displayTitle = pathName.charAt(0).toUpperCase() + pathName.slice(1).replace('-', ' ');
-
   // Quick navigation tabs for macOS header
   const quickTabs = [
     { label: 'Dashboard', path: '/dashboard' },

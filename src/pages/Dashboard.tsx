@@ -6,12 +6,11 @@ import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { AnimatedCounter } from '../components/ui/AnimatedCounter';
 import { ProgressRing } from '../components/ui/ProgressRing';
 import { Badge } from '../components/ui/Badge';
-import { Button } from '../components/ui/Button';
 import { Sparkline } from '../components/ui/Sparkline';
 import { formatRelativeDate } from '../lib/formatters';
 import {
   TrendingUp, Users, Briefcase, Plus,
-  Sparkles, ArrowRight, ShieldCheck, Zap, Layers, Play
+  Sparkles, ArrowRight, ShieldCheck
 } from 'lucide-react';
 
 export const Dashboard: React.FC = () => {
