@@ -268,5 +268,60 @@ body {
 
 .animate-pulse-ring { animation: pulse-ring 4s ease-in-out infinite; }
 
+/* ============================================================
+   GLOBAL DARK GLASS COLOR MAPPING FOR ALL PAGES
+   ============================================================ */
+
+/* High-contrast bright text overrides for dark theme */
+.text-zinc-900,
+.text-zinc-800,
+.text-zinc-700 {
+  color: #F8FAFC;
+}
+
+.text-zinc-600,
+.text-zinc-500 {
+  color: #CBD5E1;
+}
+
+.text-zinc-400,
+.text-zinc-300 {
+  color: #94A3B8;
+}
+
+/* Background card overrides for legacy light classes */
+.bg-white {
+  background-color: rgba(30, 41, 59, 0.45);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #F8FAFC;
+}
+
+.bg-zinc-50,
+.bg-zinc-100 {
+  background-color: rgba(15, 23, 42, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #F8FAFC;
+}
+
+.border-zinc-100,
+.border-zinc-200,
+.border-zinc-300 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Inputs & Selects */
+select, input, textarea {
+  color: #F8FAFC;
+  background-color: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+select option {
+  background-color: #0F172A;
+  color: #F8FAFC;
+}
+
 
 
