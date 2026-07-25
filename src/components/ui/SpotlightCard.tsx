@@ -23,8 +23,8 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
       className={cn(
         'spotlight-card rounded-2xl border transition-all duration-300 p-5 relative overflow-hidden',
         glass
-          ? 'glass-card border-white/60 shadow-lg shadow-violet-950/5 hover:border-violet-400/40 hover:shadow-violet-500/10'
-          : 'bg-white/80 backdrop-blur-md border-zinc-200/80 shadow-card hover:border-zinc-300',
+          ? 'glass-card'
+          : 'bg-slate-900/60 backdrop-blur-xl border-white/10 shadow-xl',
         hoverLift && 'hover:-translate-y-1',
         className
       )}
