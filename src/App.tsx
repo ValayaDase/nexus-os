@@ -1,11 +1,11 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { AppLayout } from './components/layout/AppLayout';
 import { PageTransition } from './components/layout/PageTransition';
 import { LoadingScreen } from './components/shared/LoadingScreen';
 
-// Lazy Load Pages
+// Lazy Load Pages with Instant Prefetch
 const Landing = lazy(() => import('./pages/Landing').then((m) => ({ default: m.Landing })));
 const Dashboard = lazy(() => import('./pages/Dashboard').then((m) => ({ default: m.Dashboard })));
 const Vision = lazy(() => import('./pages/Vision').then((m) => ({ default: m.Vision })));
@@ -30,6 +30,25 @@ const FAQ = lazy(() => import('./pages/FAQ').then((m) => ({ default: m.FAQ })));
 const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })));
 
 export const App: React.FC = () => {
+  // Pre-fetch all workspace pages in idle background time for 0ms instant switching
+  useEffect(() => {
+    const prefetchRoutes = () => {
+      import('./pages/Dashboard');
+      import('./pages/Vision');
+      import('./pages/OKRs');
+      import('./pages/Roadmap');
+      import('./pages/Tasks');
+      import('./pages/Investors');
+      import('./pages/Financials');
+      import('./pages/Hiring');
+    };
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(prefetchRoutes);
+    } else {
+      setTimeout(prefetchRoutes, 1000);
+    }
+  }, []);
+
   return (
     <BrowserRouter>
       <Suspense fallback={<LoadingScreen />}>

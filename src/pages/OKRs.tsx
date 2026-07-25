@@ -16,7 +16,7 @@ export const OKRs: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-y-8 animate-fade-in text-slate-100">
       <PageHeader
         title="Company Goals (OKRs)"
         subtitle="Track quarterly strategic objectives and key results aligned across departments."
@@ -29,33 +29,33 @@ export const OKRs: React.FC = () => {
 
       {/* Summary KPI Bar */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <SpotlightCard className="bg-white p-6 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center shrink-0">
+        <SpotlightCard className="glass-card p-6 flex items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/30">
             <Target className="w-6 h-6" />
           </div>
           <div>
-            <div className="text-xs text-zinc-500 font-medium">Total Objectives</div>
-            <div className="font-display font-bold text-2xl text-zinc-900">{okrs.length} Objectives</div>
+            <div className="text-xs text-slate-400 font-medium">Total Objectives</div>
+            <div className="font-display font-bold text-2xl text-white">{okrs.length} Objectives</div>
           </div>
         </SpotlightCard>
 
-        <SpotlightCard className="bg-white p-6 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+        <SpotlightCard className="glass-card p-6 flex items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30">
             <CheckCircle2 className="w-6 h-6" />
           </div>
           <div>
-            <div className="text-xs text-zinc-500 font-medium">Objectives On Track</div>
-            <div className="font-display font-bold text-2xl text-emerald-600">
+            <div className="text-xs text-slate-400 font-medium">Objectives On Track</div>
+            <div className="font-display font-bold text-2xl text-emerald-400">
               {okrs.filter((o) => o.status === 'on_track').length} / {okrs.length}
             </div>
           </div>
         </SpotlightCard>
 
-        <SpotlightCard className="bg-white p-6 flex items-center gap-4">
+        <SpotlightCard className="glass-card p-6 flex items-center gap-4">
           <ProgressRing progress={65} size={50} strokeWidth={6} showValue={false} />
           <div>
-            <div className="text-xs text-zinc-500 font-medium">Average Q3 Progress</div>
-            <div className="font-display font-bold text-2xl text-zinc-900">65% Overall</div>
+            <div className="text-xs text-slate-400 font-medium">Average Q3 Progress</div>
+            <div className="font-display font-bold text-2xl text-white">65% Overall</div>
           </div>
         </SpotlightCard>
       </div>
@@ -66,28 +66,28 @@ export const OKRs: React.FC = () => {
           const isExpanded = expandedId === okr.id;
 
           return (
-            <SpotlightCard key={okr.id} className="bg-white p-6 transition-all duration-200">
+            <SpotlightCard key={okr.id} className="glass-card p-6 transition-all duration-200">
               <div
                 className="flex items-center justify-between cursor-pointer select-none"
                 onClick={() => toggleExpand(okr.id)}
               >
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-xl bg-zinc-100 text-zinc-700">
-                    <Target className="w-5 h-5 text-violet-600" />
+                  <div className="p-3 rounded-xl bg-white/10 text-indigo-400 border border-white/10">
+                    <Target className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="flex items-center gap-3">
-                      <h3 className="font-display font-bold text-lg text-zinc-900">{okr.objective}</h3>
+                      <h3 className="font-display font-bold text-lg text-white">{okr.objective}</h3>
                       <Badge variant="status" statusKey={okr.status} />
                     </div>
-                    <p className="text-xs text-zinc-500 mt-1">{okr.description}</p>
+                    <p className="text-xs text-slate-400 mt-1">{okr.description}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-6 shrink-0">
                   <div className="text-right hidden sm:block">
-                    <div className="font-display font-bold text-lg text-zinc-900">{okr.progress}%</div>
-                    <div className="text-[10px] text-zinc-400">Owner: {okr.owner}</div>
+                    <div className="font-display font-bold text-lg text-white">{okr.progress}%</div>
+                    <div className="text-[10px] text-slate-400">Owner: {okr.owner}</div>
                   </div>
                   <Button variant="ghost" size="sm">
                     {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -95,40 +95,44 @@ export const OKRs: React.FC = () => {
                 </div>
               </div>
 
-              {/* Progress Bar Header */}
-              <div className="mt-4 w-full h-2 bg-zinc-100 rounded-full overflow-hidden">
+              {/* Progress Bar */}
+              <div className="mt-4 w-full h-2 bg-white/10 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-violet-600 rounded-full transition-all duration-500"
+                  className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-500 rounded-full"
                   style={{ width: `${okr.progress}%` }}
                 />
               </div>
 
-              {/* Expanded Key Results Panel */}
+              {/* Key Results Expanded */}
               {isExpanded && (
-                <div className="mt-6 pt-6 border-t border-zinc-100 space-y-4 animate-fade-in">
-                  <h4 className="font-display font-semibold text-xs text-zinc-400 uppercase tracking-wider">
+                <div className="mt-6 pt-6 border-t border-white/10 space-y-4">
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
                     Key Results ({okr.keyResults.length})
-                  </h4>
-
+                  </div>
                   <div className="space-y-3">
-                    {okr.keyResults.map((kr) => (
-                      <div key={kr.id} className="p-4 rounded-xl bg-zinc-50 border border-zinc-100 space-y-2">
-                        <div className="flex items-center justify-between text-xs font-semibold text-zinc-900">
-                          <span>{kr.title}</span>
-                          <span className="font-mono text-violet-600">
-                            {kr.current} / {kr.target} {kr.unit} ({kr.progress}%)
-                          </span>
+                    {okr.keyResults.map((kr) => {
+                      const krPct = Math.round((kr.current / kr.target) * 100);
+                      return (
+                        <div key={kr.id} className="p-3 rounded-xl bg-white/5 border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                          <div className="space-y-1">
+                            <div className="text-xs font-semibold text-white">{kr.title}</div>
+                            <div className="text-[10px] text-slate-400 font-mono">
+                              {kr.current} / {kr.target} {kr.unit} ({krPct}%)
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <input
+                              type="range"
+                              min={0}
+                              max={kr.target}
+                              value={kr.current}
+                              onChange={(e) => updateOKRProgress(okr.id, kr.id, Number(e.target.value))}
+                              className="w-32 accent-blue-500 cursor-pointer"
+                            />
+                          </div>
                         </div>
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={kr.progress}
-                          onChange={(e) => updateOKRProgress(okr.id, Number(e.target.value))}
-                          className="w-full h-1.5 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-violet-600"
-                        />
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}

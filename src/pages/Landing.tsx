@@ -59,7 +59,7 @@ export const Landing: React.FC = () => {
               N
             </div>
             <span className="font-display font-bold text-base text-white tracking-tight">
-              Founder OS
+              NexusOS
             </span>
           </NavLink>
 
@@ -133,7 +133,7 @@ export const Landing: React.FC = () => {
 
             {/* Subtitle */}
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-              Founder OS helps you manage your vision, teams, tasks, roadmaps, investors, fundraising and growth — in a single, powerful workspace.
+              Nexus OS helps you manage your vision, teams, tasks, roadmaps, investors, fundraising and growth — in a single, powerful workspace.
             </p>
 
             {/* Call to Action Buttons */}
@@ -188,11 +188,11 @@ export const Landing: React.FC = () => {
               <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-purple-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xs">
-                    F
+                    N
                   </div>
-                  <span className="font-display font-bold text-xs text-white">Founder OS</span>
+                  <span className="font-display font-bold text-xs text-white">NexusOS</span>
                 </div>
-                <div className="text-[11px] font-semibold text-white/90">Good morning, Arjun 👋</div>
+                <div className="text-[11px] font-semibold text-white/90">Good morning, Valaya 👋</div>
               </div>
 
               {/* KPI Grid Preview */}
@@ -432,7 +432,7 @@ export const Landing: React.FC = () => {
             <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-purple-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xs">
               N
             </div>
-            <span className="font-display font-bold text-sm text-white">NexusOS Founder OS</span>
+            <span className="font-display font-bold text-sm text-white">NexusOS</span>
           </div>
           <p>© 2026 NexusOS Inc. Designed for Frontend Wars 2026. Built with React & Tailwind CSS.</p>
           <div className="flex gap-6">
